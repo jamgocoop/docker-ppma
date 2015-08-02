@@ -14,6 +14,11 @@ fi
 : ${PPMA_DB_PASSWORD:=$MYSQL_ENV_MYSQL_ROOT_PASSWORD}
 : ${PPMA_DB_NAME:=ppma}
 
+if [ -z "$PPMA_DB_PASSWORD" ]; then
+	echo >&2 'error: missing PPMA_DB_PASSWORD or MYSQL_ENV_MYSQL_ROOT_PASSWORD environment variable'
+	exit 1
+fi
+
 if ! [ -e index.php -a -e protected/config/ppma.php ]; then
 	echo >&2 "PHP Password Manager not found in $(pwd) - copying now..."
 
