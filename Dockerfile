@@ -17,5 +17,6 @@ RUN set -x; \
 
 COPY ppma.php /usr/src/ppma/protected/config/ppma.php
 COPY docker-entrypoint.sh /entrypoint.sh
+EXPOSE 80
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]
