@@ -27,7 +27,7 @@ To use with an external database server, use `PPMA_DB_HOST` (along with
         -e PPMA_DB_USER=user -e PPMA_DB_PASSWORD=password jamgocoop/ppma
 
 If you'd like to be able to access the instance from the host without the
-container's IP, standard port mappings can be used:
+container's IP, standard port mappings can be used: 
 
     docker run --name ppma --link some-mysql:mysql -p 8080:80 -d jamgocoop/ppma
 
